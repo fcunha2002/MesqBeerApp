@@ -9,6 +9,7 @@ public class TamanhoProduto {
     private double preco = 0.00;
     private int estoque = 0;
     private int imagem;
+    private UnidadeMedida unidadeMedida;
 
     public long getId() {
         return id;
@@ -50,11 +51,28 @@ public class TamanhoProduto {
         this.imagem = imagem;
     }
 
+    public UnidadeMedida getUnidadeMedida() {
+        return unidadeMedida;
+    }
+
+    public void setUnidadeMedida(UnidadeMedida unidadeMedida) {
+        this.unidadeMedida = unidadeMedida;
+    }
+
     public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem) {
         this.id = id;
         this.quantidade = quantidade;
         this.preco = preco;
         this.estoque = estoque;
         this.imagem = imagem;
+    }
+
+    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
+        this.id = id;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.estoque = estoque;
+        this.imagem = imagem;
+        this.unidadeMedida = unidadeMedida;
     }
 }
