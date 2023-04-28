@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/288217/AndroidStudioProjects/MesqBeerApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/288217/AndroidStudioProjects/MesqBeerApp/app/src/main/res/layout/activity_cadastrar_produto.xml" value="0.25" />
+        <entry key="..\:/Users/288217/AndroidStudioProjects/MesqBeerApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/fabiom/AndroidStudioProjects/MesqBeerApp/app/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
       </map>
     </option>
