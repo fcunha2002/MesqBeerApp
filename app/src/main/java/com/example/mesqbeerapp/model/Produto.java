@@ -2,8 +2,8 @@ package com.example.mesqbeerapp.model;
 
 public class Produto {
 
-    String nome = "";
-    String descricao = "";
+    private String nome = "";
+    private String descricao = "";
     long id = 0;
 
     public String getNome() {
