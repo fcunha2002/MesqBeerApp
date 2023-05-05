@@ -1,8 +1,10 @@
-package com.example.mesqbeerapp;
+package com.example.mesqbeerapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mesqbeerapp.R;
 
 public class MenuActivity extends AppCompatActivity {
 
