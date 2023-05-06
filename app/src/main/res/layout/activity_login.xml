@@ -36,6 +36,7 @@
             android:layout_width="243dp"
             android:layout_height="48dp"
             android:layout_marginTop="28dp"
+            android:onClick="entrar"
             android:text="Entrar"
             app:backgroundTint="#FE8900"
             app:layout_constraintEnd_toEndOf="parent"
