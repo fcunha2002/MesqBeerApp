@@ -10,12 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="357dp"
         android:layout_height="366dp"
-        android:layout_marginTop="136dp"
         android:background="#764B1C"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:context=".activity.LoginActivity">
 
         <EditText
@@ -121,13 +119,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="290dp"
-        android:layout_height="135dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginTop="4dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logologo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
