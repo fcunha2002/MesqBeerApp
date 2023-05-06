@@ -20,4 +20,10 @@ public class MenuActivity extends AppCompatActivity {
             Intent i = new Intent(this, ListarProdutosActivity.class);
             startActivity(i);
         }
-    }
+
+    public void cadastro(View view) {
+            Intent i = new Intent(this, CadastrarProdutoActivity.class);
+            startActivity(i);
+        }
+
+}
