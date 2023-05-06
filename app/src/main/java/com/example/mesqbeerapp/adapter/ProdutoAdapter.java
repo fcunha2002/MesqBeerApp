@@ -10,12 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mesqbeerapp.R;
+import com.example.mesqbeerapp.model.Produto;
+
 import java.util.List;
 
-public class PostagemAdapter extends RecyclerView.Adapter<PostagemAdapter.MyViewHolder>{
-    List<Postagem> lista;
+public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHolder>{
+    List<Produto> lista;
 
-    public PostagemAdapter(List<Postagem> lista) {
+    public ProdutoAdapter(List<Produto> lista) {
         this.lista = lista;
     }
 
@@ -24,17 +27,16 @@ public class PostagemAdapter extends RecyclerView.Adapter<PostagemAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.card_postagem, parent, false);
-
+                R.layout.card_produto, parent, false);
         return new MyViewHolder(itemLista);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Postagem p = lista.get(position);
+        Produto p = lista.get(position);
 
         //holder.tvNome.setText(p.getNome());
-        //holder.tvTextoPostagem.setText(p.getTexto());
+        //holder.tvTextoProduto.setText(p.getTexto());
         //holder.ivImagem.setImageResource(p.getImagem());
     }
 
@@ -44,16 +46,16 @@ public class PostagemAdapter extends RecyclerView.Adapter<PostagemAdapter.MyView
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvNome;
-        private TextView tvTextoPostagem;
+        /*private TextView tvNome;
+        private TextView tvTextoProduto;
         private ImageView ivImagem;
         private Button btGostar;
-        private Button btComentar;
+        private Button btComentar;*/
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             //tvNome = itemView.findViewById(R.id.tvNome);
-            //tvTextoPostagem = itemView.findViewById(R.id.tvTextoPostagem);
+            //tvTextoProduto = itemView.findViewById(R.id.tvTextoProduto);
             //ivImagem = itemView.findViewById(R.id.ivImagem);
             //btGostar = itemView.findViewById(R.id.btGostar);
             //btComentar = itemView.findViewById(R.id.btComentario);
