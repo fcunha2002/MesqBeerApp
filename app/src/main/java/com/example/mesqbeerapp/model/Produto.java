@@ -8,6 +8,21 @@ public class Produto {
     private TipoProduto tipoProduto;
     private TamanhoProduto tamanhoProduto;
 
+    public Produto(String nome, String descricao, long id)
+    {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.id = id;
+    }
+
+    public Produto(String nome, String descricao, long id, TipoProduto tipoProduto, TamanhoProduto tamanhoProduto) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.id = id;
+        this.tipoProduto = tipoProduto;
+        this.tamanhoProduto = tamanhoProduto;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -48,18 +63,4 @@ public class Produto {
         this.tamanhoProduto = tamanhoProduto;
     }
 
-    public Produto(String nome, String descricao, long id)
-    {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.id = id;
-    }
-
-    public Produto(String nome, String descricao, long id, TipoProduto tipoProduto, TamanhoProduto tamanhoProduto) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.id = id;
-        this.tipoProduto = tipoProduto;
-        this.tamanhoProduto = tamanhoProduto;
-    }
 }

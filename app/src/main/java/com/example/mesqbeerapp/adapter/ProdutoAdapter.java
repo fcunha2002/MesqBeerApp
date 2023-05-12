@@ -35,9 +35,10 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Produto p = lista.get(position);
 
-        //holder.tvNome.setText(p.getNome());
-        //holder.tvTextoProduto.setText(p.getTexto());
-        //holder.ivImagem.setImageResource(p.getImagem());
+        holder.tvNomeProduto.setText(p.getNome());
+        holder.tvDescrProduto.setText(p.getDescricao());
+        holder.tvPrecoProduto.setText(String.valueOf(p.getTamanhoProduto().getPreco()));
+        holder.ivImagem.setImageResource(p.getTamanhoProduto().getImagem());
     }
 
     @Override
@@ -46,19 +47,19 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        /*private TextView tvNome;
-        private TextView tvTextoProduto;
+        private TextView tvNomeProduto;
+        private TextView tvDescrProduto;
+        private TextView tvPrecoProduto;
         private ImageView ivImagem;
-        private Button btGostar;
-        private Button btComentar;*/
+        private Button btAdicionar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            //tvNome = itemView.findViewById(R.id.tvNome);
-            //tvTextoProduto = itemView.findViewById(R.id.tvTextoProduto);
-            //ivImagem = itemView.findViewById(R.id.ivImagem);
-            //btGostar = itemView.findViewById(R.id.btGostar);
-            //btComentar = itemView.findViewById(R.id.btComentario);
+            tvNomeProduto = itemView.findViewById(R.id.tvNomeProduto);
+            tvDescrProduto = itemView.findViewById(R.id.tvDescrProduto);
+            tvPrecoProduto = itemView.findViewById(R.id.tvPrecoProduto);
+            ivImagem = itemView.findViewById(R.id.ivImagem);
+            btAdicionar = itemView.findViewById(R.id.btAdicionar);
         }
     }
 

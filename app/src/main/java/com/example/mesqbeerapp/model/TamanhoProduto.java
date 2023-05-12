@@ -11,6 +11,28 @@ public class TamanhoProduto {
     private int imagem;
     private UnidadeMedida unidadeMedida;
 
+    public TamanhoProduto(int imagem, double preco) {
+        this.imagem = imagem;
+        this.preco = preco;
+    }
+
+    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem) {
+        this.id = id;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.estoque = estoque;
+        this.imagem = imagem;
+    }
+
+    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
+        this.id = id;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.estoque = estoque;
+        this.imagem = imagem;
+        this.unidadeMedida = unidadeMedida;
+    }
+
     public long getId() {
         return id;
     }
@@ -59,20 +81,4 @@ public class TamanhoProduto {
         this.unidadeMedida = unidadeMedida;
     }
 
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem) {
-        this.id = id;
-        this.quantidade = quantidade;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.imagem = imagem;
-    }
-
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
-        this.id = id;
-        this.quantidade = quantidade;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.imagem = imagem;
-        this.unidadeMedida = unidadeMedida;
-    }
 }
