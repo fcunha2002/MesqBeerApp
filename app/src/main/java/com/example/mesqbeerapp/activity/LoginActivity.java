@@ -23,4 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this, MenuActivity.class);
         startActivity(i);
     }
+    public void Cadastrar(View view) {
+        Intent i = new Intent(this, CadastrarUsuarioActivity.class);
+        startActivity(i);
+    }
 }

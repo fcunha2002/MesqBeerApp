@@ -61,6 +61,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
             ivImagem = itemView.findViewById(R.id.ivImagem);
             btAdicionar = itemView.findViewById(R.id.btAdicionar);
         }
+
+
     }
 
 }
