@@ -60,6 +60,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
             //btGostar = itemView.findViewById(R.id.btGostar);
             //btComentar = itemView.findViewById(R.id.btComentario);
         }
+
+
     }
 
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.mesqbeerapp.R;
+import com.example.mesqbeerapp.adapter.ProdutoAdapter;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -25,5 +26,6 @@ public class MenuActivity extends AppCompatActivity {
             Intent i = new Intent(this, CadastrarProdutoActivity.class);
             startActivity(i);
         }
+
 
 }

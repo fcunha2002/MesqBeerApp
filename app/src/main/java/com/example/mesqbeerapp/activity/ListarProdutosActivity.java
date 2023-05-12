@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.mesqbeerapp.R;
+import com.example.mesqbeerapp.adapter.ProdutoAdapter;
 
 public class ListarProdutosActivity extends AppCompatActivity {
 
@@ -14,6 +15,10 @@ public class ListarProdutosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_produtos);
+    }
+    public void pedidos(View view) {
+        Intent i = new Intent(this, CadastrarProdutoActivity.class);
+        startActivity(i);
     }
 
 }
