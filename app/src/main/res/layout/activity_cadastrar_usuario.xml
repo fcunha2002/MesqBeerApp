@@ -20,7 +20,7 @@
         tools:context=".activity.LoginActivity">
 
         <Button
-            android:id="@+id/btnCadastrarCriar"
+            android:id="@+id/button3"
             android:layout_width="243dp"
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
@@ -30,7 +30,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/EDTlogin_senha" />
 
         <TextView
             android:id="@+id/textView4"
@@ -70,28 +70,26 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtCadastrarNome"
+            android:id="@+id/editTextText"
             android:layout_width="318dp"
             android:layout_height="49dp"
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Nome:"
             android:inputType="text"
-            android:nextFocusForward="@id/edtCadastrarEmail"
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <EditText
-            android:id="@+id/edtCadastrarEmail"
+            android:id="@+id/EDTlogin_e_mail"
             android:layout_width="318dp"
             android:layout_height="52dp"
             android:layout_marginTop="84dp"
             android:ems="10"
             android:hint="e-mail:"
             android:inputType="textEmailAddress"
-            android:nextFocusForward="@id/edtCadastrarSenha"
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,19 +97,18 @@
 
 
         <EditText
-            android:id="@+id/edtCadastrarSenha"
+            android:id="@+id/EDTlogin_senha"
             android:layout_width="319dp"
             android:layout_height="47dp"
             android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="Senha:"
             android:inputType="textPassword"
-            android:nextFocusForward="@id/btnCadastrarCriar"
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/EDTlogin_e_mail" />
 
 
 
@@ -129,5 +126,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

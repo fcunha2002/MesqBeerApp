@@ -212,8 +212,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="135dp"
-        android:layout_height="43dp"
+        android:layout_width="142dp"
+        android:layout_height="42dp"
         android:layout_marginTop="556dp"
         android:text="Salvar"
         app:backgroundTint="#B0783B"
