@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mesqbeerapp.R;
 import com.example.mesqbeerapp.model.Produto;
+import com.example.mesqbeerapp.util.Formatacao;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHolder>{
     List<Produto> lista;
@@ -37,8 +40,9 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
 
         holder.tvNomeProduto.setText(p.getNome());
         holder.tvDescrProduto.setText(p.getDescricao());
-        holder.tvPrecoProduto.setText(String.valueOf(p.getTamanhoProduto().getPreco()));
         holder.ivImagem.setImageResource(p.getTamanhoProduto().getImagem());
+        holder.tvPrecoProduto.setText(Formatacao.formataMoeda(p.getTamanhoProduto().getPreco()));
+
     }
 
     @Override
