@@ -19,7 +19,7 @@
         tools:context=".activity.LoginActivity">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnCadastrarCriar"
             android:layout_width="243dp"
             android:layout_height="48dp"
             android:layout_marginTop="26dp"
@@ -28,7 +28,7 @@
             app:backgroundTint="#FE8900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarSenha" />
 
         <TextView
             android:id="@+id/textView10"
@@ -40,7 +40,7 @@
             android:textColor="#FE8900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastrarCriar" />
 
         <TextView
             android:id="@+id/textView4"
@@ -67,7 +67,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastrarCriar"
             app:layout_constraintVertical_bias="0.101" />
 
         <ProgressBar
@@ -94,7 +94,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/edtCadastrarEmail"
             android:layout_width="318dp"
             android:layout_height="52dp"
             android:layout_marginTop="17dp"
@@ -111,7 +111,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/edtCadastrarSenha"
             android:layout_width="319dp"
             android:layout_height="47dp"
             android:layout_marginTop="12dp"
@@ -122,7 +122,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarEmail" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
