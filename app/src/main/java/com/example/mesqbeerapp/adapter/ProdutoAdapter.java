@@ -14,9 +14,7 @@ import com.example.mesqbeerapp.R;
 import com.example.mesqbeerapp.model.Produto;
 import com.example.mesqbeerapp.util.Formatacao;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHolder>{
     List<Produto> lista;
