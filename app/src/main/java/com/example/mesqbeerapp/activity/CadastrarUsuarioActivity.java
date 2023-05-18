@@ -16,4 +16,9 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_usuario);
     }
 
+    public void criar(View view) {
+        //Implementar Toast com mensagem de sucesso
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+    }
 }
