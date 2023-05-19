@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "528192949032",
+    "project_id": "mesqbeer",
+    "storage_bucket": "mesqbeer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528192949032:android:b122580db4dba9095fde1d",
+        "android_client_info": {
+          "package_name": "com.example.mesqbeerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528192949032-4gl915e0mj4c9tm1mgoc1ovfq4kqh812.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH_uIIuEk9Wy6Oz9jVCaMw3UDgaV8EHz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528192949032-4gl915e0mj4c9tm1mgoc1ovfq4kqh812.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
