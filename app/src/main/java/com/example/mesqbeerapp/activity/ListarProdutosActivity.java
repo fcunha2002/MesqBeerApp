@@ -43,19 +43,19 @@ public class ListarProdutosActivity extends AppCompatActivity {
     private void buscarProdutos() {
         Produto p;
 
-        p = new Produto("Heineken Long Neck 355 ml", "Produto para maiores de 18 anos.", 1);
+        p = new Produto("Heineken Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
         p.setTamanhoProduto(new TamanhoProduto(R.drawable.heinekensf, 8.25));
         listaProdutos.add(p);
 
-        p = new Produto("Eisenbahn Long Neck 355 ml", "Produto para maiores de 18 anos.", 1);
+        p = new Produto("Eisenbahn Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
         p.setTamanhoProduto(new TamanhoProduto(R.drawable.eisenbahnsf, 9.25));
         listaProdutos.add(p);
 
-        p = new Produto("Spaten Long Neck 355 ml", "Produto para maiores de 18 anos.", 1);
+        p = new Produto("Spaten Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
         p.setTamanhoProduto(new TamanhoProduto(R.drawable.spaten, 10.25));
         listaProdutos.add(p);
 
-        p = new Produto("Tiger Long Neck 355 ml", "Produto para maiores de 18 anos.", 1);
+        p = new Produto("Tiger Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
         p.setTamanhoProduto(new TamanhoProduto(R.drawable.tigersf, 11.25));
         listaProdutos.add(p);
     }

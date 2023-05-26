@@ -1,21 +1,36 @@
 package com.example.mesqbeerapp.model;
 
-public class Produto {
+import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
 
-    private String nome = "";
-    private String descricao = "";
-    private long id = 0;
+import java.io.Serializable;
+
+public class Produto implements Serializable {
+
+    private String nome;
+    private String descricao;
+    private String id;
     private TipoProduto tipoProduto;
     private TamanhoProduto tamanhoProduto;
 
-    public Produto(String nome, String descricao, long id)
+    public Produto() {
+    }
+
+    public void salvar(){
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getId());
+
+        produtoRef.setValue(this);
+    }
+
+    public Produto(String nome, String descricao, String id)
     {
         this.nome = nome;
         this.descricao = descricao;
         this.id = id;
     }
 
-    public Produto(String nome, String descricao, long id, TipoProduto tipoProduto, TamanhoProduto tamanhoProduto) {
+    public Produto(String nome, String descricao, String id, TipoProduto tipoProduto, TamanhoProduto tamanhoProduto) {
         this.nome = nome;
         this.descricao = descricao;
         this.id = id;
@@ -39,11 +54,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

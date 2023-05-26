@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtCadastrarProdutoNome"
         android:layout_width="299dp"
         android:layout_height="42dp"
         android:layout_marginTop="24dp"
@@ -63,7 +63,7 @@
         android:layout_marginTop="44dp"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoDescricao"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -186,7 +186,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/edtCadastrarProdutoDescricao"
         android:layout_width="304dp"
         android:layout_height="38dp"
         android:layout_marginTop="28dp"
@@ -211,28 +211,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnCadastrarProdutoSalvar"
         android:layout_width="142dp"
         android:layout_height="42dp"
-        android:layout_marginTop="556dp"
+        android:onClick="salvar"
         android:text="Salvar"
         app:backgroundTint="#B0783B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="135dp"
         android:layout_height="43dp"
-        android:layout_marginTop="556dp"
         android:text="Cancelar"
         app:backgroundTint="#B0783B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
