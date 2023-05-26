@@ -18,7 +18,13 @@ public class Produto implements Serializable {
 
     public void salvar(){
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
-        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getId());
+
+        //Gera uma chave única (ID) com o comando push()
+        DatabaseReference produtoRef = firebaseRef.child("produtos").push();
+        // Pega a chave única (ID) gerada com o comando push()
+        this.id = produtoRef.getKey();
+
+        produtoRef = firebaseRef.child("produtos").child(getId());
 
         produtoRef.setValue(this);
     }

@@ -27,7 +27,6 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
 
         p.setNome(nomeProduto.getText().toString());
         p.setDescricao(descricaoProduto.getText().toString());
-        p.setId("X2");
         p.salvar();
 
 
