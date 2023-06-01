@@ -10,7 +10,7 @@ public class Produto implements Serializable {
     private String nome;
     private String descricao;
     private String id;
-    private TipoProduto tipoProduto;
+    private String tipoProduto;
     private TamanhoProduto tamanhoProduto;
 
     public Produto() {
@@ -36,7 +36,7 @@ public class Produto implements Serializable {
         this.id = id;
     }
 
-    public Produto(String nome, String descricao, String id, TipoProduto tipoProduto, TamanhoProduto tamanhoProduto) {
+    public Produto(String nome, String descricao, String id, String tipoProduto, TamanhoProduto tamanhoProduto) {
         this.nome = nome;
         this.descricao = descricao;
         this.id = id;
@@ -68,11 +68,11 @@ public class Produto implements Serializable {
         this.id = id;
     }
 
-    public TipoProduto getTipoProduto() {
+    public String getTipoProduto() {
         return tipoProduto;
     }
 
-    public void setTipoProduto(TipoProduto tipoProduto) {
+    public void setTipoProduto(String tipoProduto) {
         this.tipoProduto = tipoProduto;
     }
 

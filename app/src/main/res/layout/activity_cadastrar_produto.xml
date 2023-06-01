@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoNome" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spnCadastrarProdutoTipo"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
             android:layout_marginTop="8dp"
             android:text="Descrição:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+            app:layout_constraintTop_toBottomOf="@+id/spnCadastrarProdutoTipo" />
 
         <EditText
             android:id="@+id/edtCadastrarProdutoDescricao"

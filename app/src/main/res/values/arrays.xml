@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo_produto_array">
+        <item>Pilsen</item>
+        <item>Lager</item>
+        <item>Pale Ale</item>
+        <item>Bock</item>
+        <item>Weissbier</item>
+        <item>IPA</item>
+    </string-array>
+</resources>

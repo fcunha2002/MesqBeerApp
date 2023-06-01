@@ -2,8 +2,16 @@ package com.example.mesqbeerapp.model;
 
 public class TipoProduto {
 
-    private long id = 0;
-    private String nome = "";
+    private long id;
+    private String nome;
+
+    public TipoProduto() {
+    }
+
+    public TipoProduto(long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 
     public long getId() {
         return id;
@@ -21,8 +29,4 @@ public class TipoProduto {
         this.nome = nome;
     }
 
-    public TipoProduto(long id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
 }
