@@ -14,6 +14,9 @@ import com.example.mesqbeerapp.model.Produto;
 public class CadastrarProdutoActivity extends AppCompatActivity {
     public EditText nomeProduto;
     public EditText descricaoProduto;
+    public EditText precoProduto;
+    public EditText quantidadeProduto;
+    public EditText estoqueProduto;
     public Spinner tipoProduto;
 
     @Override
@@ -23,6 +26,10 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
 
         nomeProduto = findViewById(R.id.edtCadastrarProdutoNome);
         descricaoProduto = findViewById(R.id.edtCadastrarProdutoDescricao);
+
+        precoProduto = findViewById(R.id.edtCadastrarProdutoPreco);
+        quantidadeProduto = findViewById(R.id.edtCadastrarProdutoQuantidade);
+        estoqueProduto = findViewById(R.id.edtCadastrarProdutoEstoque);
 
         tipoProduto = findViewById(R.id.spnCadastrarProdutoTipo);
         // Cria um ArrayAdapter usando um string array e um layout padrão de spinner
@@ -41,6 +48,9 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         p.setNome(nomeProduto.getText().toString());
         p.setDescricao(descricaoProduto.getText().toString());
         p.setTipoProduto(tipoProduto.getSelectedItem().toString());
+        p.getTamanhoProduto().setPreco(Double.parseDouble(precoProduto.getText().toString()));
+        p.getTamanhoProduto().setQuantidade(Integer.parseInt(quantidadeProduto.getText().toString()));
+        p.getTamanhoProduto().setEstoque(Integer.parseInt(estoqueProduto.getText().toString()));
         p.salvar();
 
 

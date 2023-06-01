@@ -14,6 +14,7 @@ public class Produto implements Serializable {
     private TamanhoProduto tamanhoProduto;
 
     public Produto() {
+        this.tamanhoProduto = new TamanhoProduto();
     }
 
     public void salvar(){

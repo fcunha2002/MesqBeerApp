@@ -1,44 +1,34 @@
 package com.example.mesqbeerapp.model;
 
-//import java.awt.image.BufferedImage;
-
 public class TamanhoProduto {
 
-    private long id = 0;
-    private int quantidade = 0;
-    private double preco = 0.00;
-    private int estoque = 0;
+    private int quantidade;
+    private double preco;
+    private int estoque;
     private int imagem;
     private UnidadeMedida unidadeMedida;
+
+    public TamanhoProduto() {
+    }
 
     public TamanhoProduto(int imagem, double preco) {
         this.imagem = imagem;
         this.preco = preco;
     }
 
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem) {
-        this.id = id;
+    public TamanhoProduto(int quantidade, double preco, int estoque, int imagem) {
         this.quantidade = quantidade;
         this.preco = preco;
         this.estoque = estoque;
         this.imagem = imagem;
     }
 
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
-        this.id = id;
+    public TamanhoProduto(int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
         this.quantidade = quantidade;
         this.preco = preco;
         this.estoque = estoque;
         this.imagem = imagem;
         this.unidadeMedida = unidadeMedida;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public int getQuantidade() {

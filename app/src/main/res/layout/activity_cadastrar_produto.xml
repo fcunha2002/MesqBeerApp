@@ -131,13 +131,14 @@
             app:layout_constraintTop_toTopOf="@+id/textView6" />
 
         <EditText
-            android:id="@+id/editTextNumber2"
+            android:id="@+id/edtCadastrarProdutoEstoque"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:backgroundTint="#7A480B"
             android:ems="10"
             android:inputType="number"
+            android:textAlignment="textEnd"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -152,13 +153,14 @@
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
+            android:id="@+id/edtCadastrarProdutoQuantidade"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:backgroundTint="#7A480B"
             android:ems="10"
-            android:inputType="numberDecimal"
+            android:inputType="number"
+            android:textAlignment="textEnd"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -170,16 +172,17 @@
             android:layout_marginTop="8dp"
             android:text="Quantidade:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoPreco" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/edtCadastrarProdutoPreco"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:backgroundTint="#7A480B"
             android:ems="10"
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
+            android:textAlignment="textEnd"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -228,7 +231,7 @@
             app:backgroundTint="#B0783B"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoQuantidade" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
