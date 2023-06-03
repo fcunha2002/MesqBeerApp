@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mesq Beer App</string>
+    <string name="nome">Nome:</string>
 </resources>
