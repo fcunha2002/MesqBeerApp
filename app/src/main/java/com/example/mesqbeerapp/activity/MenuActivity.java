@@ -1,15 +1,14 @@
 package com.example.mesqbeerapp.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mesqbeerapp.R;
-import com.example.mesqbeerapp.adapter.ProdutoAdapter;
 import com.example.mesqbeerapp.model.Usuario;
 import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
 import com.google.firebase.auth.FirebaseAuth;
