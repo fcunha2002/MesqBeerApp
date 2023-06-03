@@ -5,12 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activity.CadastrarProdutoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".activity.CadastrarProdutoActivity">
+        android:layout_height="match_parent">
 
 
         <TextView
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoDescricao" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imvCadastrarProdutoFoto"
             android:layout_width="178dp"
             android:layout_height="107dp"
             android:scaleType="fitCenter"
@@ -101,15 +101,16 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnCadastrarProdutoDefinirFoto"
             android:layout_width="161dp"
             android:layout_height="55dp"
-            android:text="Inserir Arquivo"
+            android:onClick="abreCamera"
+            android:text="Definir Foto"
             app:backgroundTint="#B0783B"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="@+id/imvCadastrarProdutoFoto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintTop_toTopOf="@+id/imvCadastrarProdutoFoto" />
 
         <TextView
             android:id="@+id/textView6"
@@ -119,7 +120,7 @@
             android:layout_marginTop="52dp"
             android:text="Preço:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imvCadastrarProdutoFoto" />
 
         <TextView
             android:id="@+id/textView7"
