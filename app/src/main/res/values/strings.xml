@@ -7,11 +7,10 @@
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
     <string name="entrar_na_conta_com_e_mail_e_senha">Entrar na conta com E-mail e Senha:</string>
     <string name="quero_criar_uma_conta">Quero criar uma conta</string>
-    <string name="cat_logo">Catálogo</string>
+    <string name="catalogo">Catálogo</string>
     <string name="gerenciar">Gerenciar</string>
     <string name="pedidos">Pedidos</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="produto_para_maiores_de_18_anos">produto para maiores de 18 anos.</string>
     <string name="adicionar">Adicionar</string>
-    <string name="catalogo">catalogo</string>
 </resources>
