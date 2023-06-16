@@ -1,44 +1,23 @@
 package com.example.mesqbeerapp.model;
 
-//import java.awt.image.BufferedImage;
+import android.graphics.Bitmap;
+
+import com.google.firebase.database.Exclude;
 
 public class TamanhoProduto {
 
-    private long id = 0;
-    private int quantidade = 0;
-    private double preco = 0.00;
-    private int estoque = 0;
-    private int imagem;
+    private int quantidade;
+    private double preco;
+    private int estoque;
+    private Bitmap imagem;
     private UnidadeMedida unidadeMedida;
 
-    public TamanhoProduto(int imagem, double preco) {
+    public TamanhoProduto() {
+    }
+
+    public TamanhoProduto(Bitmap imagem, double preco) {
         this.imagem = imagem;
         this.preco = preco;
-    }
-
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem) {
-        this.id = id;
-        this.quantidade = quantidade;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.imagem = imagem;
-    }
-
-    public TamanhoProduto(long id, int quantidade, double preco, int estoque, int imagem, UnidadeMedida unidadeMedida) {
-        this.id = id;
-        this.quantidade = quantidade;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.imagem = imagem;
-        this.unidadeMedida = unidadeMedida;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public int getQuantidade() {
@@ -65,11 +44,12 @@ public class TamanhoProduto {
         this.estoque = estoque;
     }
 
-    public int getImagem() {
+    @Exclude
+    public Bitmap getImagem() {
         return imagem;
     }
 
-    public void setImagem(int imagem) {
+    public void setImagem(Bitmap imagem) {
         this.imagem = imagem;
     }
 

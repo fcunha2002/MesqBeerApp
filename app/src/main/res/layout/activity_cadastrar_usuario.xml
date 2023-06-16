@@ -20,17 +20,17 @@
         tools:context=".activity.LoginActivity">
 
         <Button
-            android:id="@+id/btnCadastrarCriar"
+            android:id="@+id/btnCadastrarUsuarioCriar"
             android:layout_width="243dp"
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
             android:onClick="criar"
-            android:text="Criar usuário "
+            android:text="@string/criar_usuario"
             app:backgroundTint="#FE8900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarUsuarioSenha" />
 
         <TextView
             android:id="@+id/textView4"
@@ -38,7 +38,7 @@
             android:layout_height="31dp"
             android:layout_marginTop="36dp"
             android:gravity="center"
-            android:text="Crie seu usuário:"
+            android:text="@string/crie_seu_usuario"
             android:textColor="#FF9800"
             app:drawableTint="#EFCECE"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,28 +70,28 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtCadastrarUsuario"
+            android:id="@+id/edtCadastrarUsuarioNome"
             android:layout_width="318dp"
             android:layout_height="49dp"
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Nome:"
             android:inputType="text"
-            android:nextFocusForward="@id/edtCadastrarEmail"
+            android:nextFocusForward="@id/edtCadastrarUsuarioEmail"
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <EditText
-            android:id="@+id/edtCadastrarEmail"
+            android:id="@+id/edtCadastrarUsuarioEmail"
             android:layout_width="318dp"
             android:layout_height="52dp"
             android:layout_marginTop="84dp"
             android:ems="10"
             android:hint="e-mail:"
             android:inputType="textEmailAddress"
-            android:nextFocusForward="@id/edtCadastrarSenha"
+            android:nextFocusForward="@id/edtCadastrarUsuarioSenha"
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
 
 
         <EditText
-            android:id="@+id/edtCadastrarSenha"
+            android:id="@+id/edtCadastrarUsuarioSenha"
             android:layout_width="319dp"
             android:layout_height="47dp"
             android:layout_marginTop="12dp"
@@ -110,7 +110,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCadastrarUsuarioEmail" />
 
 
 

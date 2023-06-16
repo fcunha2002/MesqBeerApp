@@ -38,7 +38,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
 
         holder.tvNomeProduto.setText(p.getNome());
         holder.tvDescrProduto.setText(p.getDescricao());
-        holder.ivImagem.setImageResource(p.getTamanhoProduto().getImagem());
+        holder.ivImagem.setImageBitmap(p.getTamanhoProduto().getImagem());
         holder.tvPrecoProduto.setText(Formatacao.formataMoeda(p.getTamanhoProduto().getPreco()));
 
     }
