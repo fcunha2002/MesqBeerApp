@@ -1,16 +1,24 @@
 package com.example.mesqbeerapp.activity;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -68,7 +76,6 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.tipo_produto_array, android.R.layout.simple_spinner_item);
         // Especifica o layout usado para mostrar a lista de tipos de produto
-        //.simple_spinner_dropdown_item
         adapter.setDropDownViewResource(android.R.layout.select_dialog_item);
         // Conecta o adapter no spinner
         tipoProduto.setAdapter(adapter);
@@ -83,6 +90,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         p.getTamanhoProduto().setPreco(Double.parseDouble(precoProduto.getText().toString()));
         p.getTamanhoProduto().setQuantidade(Integer.parseInt(quantidadeProduto.getText().toString()));
         p.getTamanhoProduto().setEstoque(Integer.parseInt(estoqueProduto.getText().toString()));
+        p.getTamanhoProduto().setImagem(((BitmapDrawable)fotoProduto.getDrawable()).getBitmap());
         p.salvar();
 
     }
@@ -91,74 +99,43 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        for (int permissaoResultado : grantResults){
-            if (permissaoResultado == PackageManager.PERMISSION_DENIED){
+        for (int permissaoResultado : grantResults) {
+            if (permissaoResultado == PackageManager.PERMISSION_DENIED) {
                 alertaValidacaoPermissao();
             }
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    ActivityResultLauncher<Intent> cameraResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Bitmap imagem = null;
 
-        if (resultCode == RESULT_OK){
-            Bitmap imagem = null;
-
-            try {
-                switch (requestCode){
-                    case SELECAO_CAMERA:
-                        imagem = (Bitmap) data.getExtras().get("data");
-                        break;
+                        try {
+                            imagem = (Bitmap) result.getData().getExtras().get("data");
 //                    case SELECAO_GALERIA:
 //                        Uri uriImagemSelec = data.getData();
 //                        ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), uriImagemSelec);
 //                        imagem = ImageDecoder.decodeBitmap(source);
 //                        break;
+
+                            if (imagem != null) {
+                                fotoProduto.setImageBitmap(imagem);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
-
-                if (imagem != null){
-                    fotoProduto.setImageBitmap(imagem);
-
-//                    //Converter os dados da imagem para armazenar no Firebase
-//                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                    imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
-//                    byte[] dadosImagem = baos.toByteArray();
-//
-//                    //Salvar imagem no Firebase
-//                    StorageReference imagemRef = storageReference
-//                            .child("imagens")
-//                            .child(usr.getId() + ".jpeg");
-//                    UploadTask uploadTask = imagemRef.putBytes(dadosImagem);
-//                    uploadTask.addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(ConfiguracoesActivity.this,
-//                                    "Erro ao fazer upload da foto.",
-//                                    Toast.LENGTH_LONG).show();
-//                        }
-//                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            Toast.makeText(ConfiguracoesActivity.this,
-//                                    "Foto armazenada com sucesso.",
-//                                    Toast.LENGTH_LONG).show();
-//                        }
-//                    });
-
-                }
-
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-
+            });
 
     public void abreCamera(View view) {
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (i.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(i, SELECAO_CAMERA);
+            cameraResultLauncher.launch(i);
         }
     }
 

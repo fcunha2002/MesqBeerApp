@@ -1,8 +1,13 @@
 package com.example.mesqbeerapp.model;
 
+import android.graphics.Bitmap;
+
 import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 
 public class Produto implements Serializable {
@@ -28,6 +33,24 @@ public class Produto implements Serializable {
         produtoRef = firebaseRef.child("produtos").child(getId());
 
         produtoRef.setValue(this);
+
+        salvarImagem();
+    }
+
+    private void salvarImagem(){
+            //Converter os dados da imagem para armazenar no Firebase
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            Bitmap imagem = this.getTamanhoProduto().getImagem();
+            imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
+            byte[] dadosImagem = baos.toByteArray();
+
+            //Salvar imagem no Firebase
+            StorageReference storageReference = ConfiguracaoFirebase.getFirebaseStorage();
+            StorageReference imagemRef = storageReference
+                    .child("imagens")
+                    .child(this.getId() + ".jpeg");
+            imagemRef.putBytes(dadosImagem);
+
     }
 
     public Produto(String nome, String descricao, String id)
