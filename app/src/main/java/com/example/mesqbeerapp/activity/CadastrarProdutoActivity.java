@@ -93,6 +93,14 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         p.getTamanhoProduto().setImagem(((BitmapDrawable)fotoProduto.getDrawable()).getBitmap());
         p.salvar();
 
+      nomeProduto.setText("");
+      descricaoProduto.setText("");
+      precoProduto.setText("");
+      quantidadeProduto.setText("");
+      estoqueProduto.setText("");
+      
+
+
     }
 
     @Override
