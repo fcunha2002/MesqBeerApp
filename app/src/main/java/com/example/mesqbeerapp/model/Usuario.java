@@ -21,6 +21,7 @@ public class Usuario implements Serializable {
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
         DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(getId());
 
+        //Equivalente ao Insert
         usuarioRef.setValue(this);
     }
 

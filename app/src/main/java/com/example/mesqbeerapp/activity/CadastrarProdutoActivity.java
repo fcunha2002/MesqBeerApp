@@ -30,7 +30,7 @@ import com.example.mesqbeerapp.util.Permissao;
 public class CadastrarProdutoActivity extends AppCompatActivity {
     private static final int SELECAO_CAMERA = 100;
 
-    private String[] permissoes = new String[]{
+    private final String[] permissoes = new String[]{
             //Manifest.permission.READ_MEDIA_IMAGES,
             Manifest.permission.CAMERA
     };
@@ -42,7 +42,6 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     public EditText estoqueProduto;
     public Spinner tipoProduto;
     public ImageView fotoProduto;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

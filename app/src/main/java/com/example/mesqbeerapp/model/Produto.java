@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;

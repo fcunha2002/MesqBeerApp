@@ -59,12 +59,10 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         } else {
             Toast.makeText(CadastrarUsuarioActivity.this, "Preencha o Nome", Toast.LENGTH_SHORT).show();
         }
-
-//        //Implementar Toast com mensagem de sucesso
-//        Intent i = new Intent(this, LoginActivity.class);
-//        startActivity(i);
     }
 
+    // Método que faz a conexão com o Firebase e salva um novo usuário na plataforma
+    //Ferramenta Authentication
     public void cadastrarUsuario(final Usuario u){
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         autenticacao.createUserWithEmailAndPassword(u.getEmail(), u.getSenha())
@@ -90,6 +88,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                             try {
                                 throw task.getException();
                             } catch (FirebaseAuthWeakPasswordException e){
+                                //Senha com menos de 6 dígitos
                                 excecao = "Digite uma senha mais forte!";
                             } catch (FirebaseAuthInvalidCredentialsException e){
                                 excecao = "Digite um email válido!";

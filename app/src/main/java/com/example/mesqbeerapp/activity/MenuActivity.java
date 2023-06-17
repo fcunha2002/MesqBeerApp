@@ -40,6 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
         DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(usr.getId());
 
+        //Equivalente ao Select
         usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
