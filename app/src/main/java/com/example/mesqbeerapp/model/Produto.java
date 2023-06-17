@@ -31,6 +31,7 @@ public class Produto implements Serializable {
 
         produtoRef = firebaseRef.child("produtos").child(getId());
 
+        //Equivalente ao Insert
         produtoRef.setValue(this);
 
         salvarImagem();
