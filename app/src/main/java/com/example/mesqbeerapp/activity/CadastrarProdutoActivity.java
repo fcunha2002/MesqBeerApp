@@ -22,10 +22,18 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.mesqbeerapp.R;
 import com.example.mesqbeerapp.model.Produto;
+import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
 import com.example.mesqbeerapp.util.Permissao;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
 
 public class CadastrarProdutoActivity extends AppCompatActivity {
     private static final int SELECAO_CAMERA = 100;
@@ -79,15 +87,51 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         p.getTamanhoProduto().setQuantidade(Integer.parseInt(quantidadeProduto.getText().toString()));
         p.getTamanhoProduto().setEstoque(Integer.parseInt(estoqueProduto.getText().toString()));
         p.getTamanhoProduto().setImagem(((BitmapDrawable)fotoProduto.getDrawable()).getBitmap());
-        p.salvar();
+        p.atribuiId();
 
-        nomeProduto.setText("");
-        descricaoProduto.setText("");
-        precoProduto.setText("");
-        quantidadeProduto.setText("");
-        estoqueProduto.setText("");
-
+        salvarImagem(p);
     }
+
+    private void salvarImagem(Produto p){
+        //Converter os dados da imagem para armazenar no Firebase
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        Bitmap imagem = p.getTamanhoProduto().getImagem();
+        imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
+        byte[] dadosImagem = baos.toByteArray();
+
+        //Salvar imagem no Firebase
+        StorageReference storageReference = ConfiguracaoFirebase.getFirebaseStorage();
+        StorageReference imagemRef = storageReference
+                .child("imagens")
+                .child(p.getId() + ".jpeg");
+        UploadTask uploadTask = imagemRef.putBytes(dadosImagem);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(CadastrarProdutoActivity.this,
+                        "Erro ao fazer upload da foto. Produto não cadastrado.",
+                        Toast.LENGTH_LONG).show();
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                p.salvar();
+
+                nomeProduto.setText("");
+                descricaoProduto.setText("");
+                precoProduto.setText("");
+                quantidadeProduto.setText("");
+                estoqueProduto.setText("");
+                tipoProduto.setSelection(0);
+                fotoProduto.setImageResource(R.drawable.logo);
+
+                Toast.makeText(CadastrarProdutoActivity.this,
+                        "Produto cadastrado com sucesso!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

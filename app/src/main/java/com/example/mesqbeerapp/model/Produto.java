@@ -21,35 +21,21 @@ public class Produto implements Serializable {
         this.tamanhoProduto = new TamanhoProduto();
     }
 
-    public void salvar(){
+    public void atribuiId(){
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
 
         //Gera uma chave única (ID) com o comando push()
         DatabaseReference produtoRef = firebaseRef.child("produtos").push();
         // Pega a chave única (ID) gerada com o comando push()
         this.id = produtoRef.getKey();
+    }
 
-        produtoRef = firebaseRef.child("produtos").child(getId());
+    public void salvar(){
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getId());
 
         //Equivalente ao Insert
         produtoRef.setValue(this);
-
-        salvarImagem();
-    }
-
-    private void salvarImagem(){
-            //Converter os dados da imagem para armazenar no Firebase
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            Bitmap imagem = this.getTamanhoProduto().getImagem();
-            imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
-            byte[] dadosImagem = baos.toByteArray();
-
-            //Salvar imagem no Firebase
-            StorageReference storageReference = ConfiguracaoFirebase.getFirebaseStorage();
-            StorageReference imagemRef = storageReference
-                    .child("imagens")
-                    .child(this.getId() + ".jpeg");
-            imagemRef.putBytes(dadosImagem);
 
     }
 
