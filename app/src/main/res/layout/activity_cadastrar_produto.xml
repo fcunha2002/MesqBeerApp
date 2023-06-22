@@ -119,7 +119,7 @@
             android:layout_width="161dp"
             android:layout_height="55dp"
             android:onClick="abreGaleria"
-            android:text="Definir Galeria"
+            android:text="Galeria"
             app:backgroundTint="#B0783B"
             app:layout_constraintBottom_toBottomOf="@+id/imvCadastrarProdutoFoto"
             app:layout_constraintEnd_toEndOf="parent"
