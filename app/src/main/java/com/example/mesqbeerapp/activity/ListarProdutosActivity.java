@@ -5,16 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.mesqbeerapp.R;
 import com.example.mesqbeerapp.adapter.ProdutoAdapter;
 import com.example.mesqbeerapp.model.Produto;
-import com.example.mesqbeerapp.model.TamanhoProduto;
 
 import java.util.ArrayList;
 
@@ -46,28 +43,24 @@ public class ListarProdutosActivity extends AppCompatActivity {
     private void buscarProdutos() {
         Produto p;
 
-        p = new Produto("Heineken Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
-        p.setTamanhoProduto(new
-                TamanhoProduto(BitmapFactory.decodeResource(getResources(),
-                R.drawable.heinekensf), 8.25));
+        p = new Produto("Heineken Long Neck 355 ml", "Produto para maiores de 18 anos.", "1",
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.heinekensf), 8.25);
         listaProdutos.add(p);
 
-        p = new Produto("Eisenbahn Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
-        p.setTamanhoProduto(new
-                TamanhoProduto(BitmapFactory.decodeResource(getResources(),
-                R.drawable.eisenbahnsf), 9.25));
+        p = new Produto("Eisenbahn Long Neck 355 ml", "Produto para maiores de 18 anos.", "1",
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.eisenbahnsf), 9.25);
         listaProdutos.add(p);
 
-        p = new Produto("Spaten Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
-        p.setTamanhoProduto(new
-                TamanhoProduto(BitmapFactory.decodeResource(getResources(),
-                R.drawable.spaten), 10.25));
+        p = new Produto("Spaten Long Neck 355 ml", "Produto para maiores de 18 anos.", "1",
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.spaten), 10.25);
         listaProdutos.add(p);
 
-        p = new Produto("Tiger Long Neck 355 ml", "Produto para maiores de 18 anos.", "1");
-        p.setTamanhoProduto(new
-                TamanhoProduto(BitmapFactory.decodeResource(getResources(),
-                R.drawable.tigersf), 11.25));
+        p = new Produto("Tiger Long Neck 355 ml", "Produto para maiores de 18 anos.", "1",
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.tigersf), 11.25);
         listaProdutos.add(p);
     }
 

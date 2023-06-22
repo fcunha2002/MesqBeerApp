@@ -83,10 +83,10 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         p.setNome(nomeProduto.getText().toString());
         p.setDescricao(descricaoProduto.getText().toString());
         p.setTipoProduto(tipoProduto.getSelectedItem().toString());
-        p.getTamanhoProduto().setPreco(Double.parseDouble(precoProduto.getText().toString()));
-        p.getTamanhoProduto().setQuantidade(Integer.parseInt(quantidadeProduto.getText().toString()));
-        p.getTamanhoProduto().setEstoque(Integer.parseInt(estoqueProduto.getText().toString()));
-        p.getTamanhoProduto().setImagem(((BitmapDrawable)fotoProduto.getDrawable()).getBitmap());
+        p.setPreco(Double.parseDouble(precoProduto.getText().toString()));
+        p.setQuantidade(Integer.parseInt(quantidadeProduto.getText().toString()));
+        p.setEstoque(Integer.parseInt(estoqueProduto.getText().toString()));
+        p.setImagem(((BitmapDrawable)fotoProduto.getDrawable()).getBitmap());
         p.atribuiId();
 
         salvarImagem(p);
@@ -95,7 +95,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     private void salvarImagem(Produto p){
         //Converter os dados da imagem para armazenar no Firebase
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        Bitmap imagem = p.getTamanhoProduto().getImagem();
+        Bitmap imagem = p.getImagem();
         imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
         byte[] dadosImagem = baos.toByteArray();
 

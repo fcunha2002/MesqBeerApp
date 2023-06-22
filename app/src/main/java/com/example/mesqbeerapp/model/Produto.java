@@ -4,9 +4,8 @@ import android.graphics.Bitmap;
 
 import com.example.mesqbeerapp.util.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.storage.StorageReference;
+import com.google.firebase.database.Exclude;
 
-import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 
 public class Produto implements Serializable {
@@ -15,11 +14,13 @@ public class Produto implements Serializable {
     private String descricao;
     private String id;
     private String tipoProduto;
-    private TamanhoProduto tamanhoProduto;
+    private int quantidade;
+    private double preco;
+    private int estoque;
+    private Bitmap imagem;
+    private UnidadeMedida unidadeMedida;
 
-    public Produto() {
-        this.tamanhoProduto = new TamanhoProduto();
-    }
+    public Produto() {}
 
     public void atribuiId(){
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
@@ -39,19 +40,20 @@ public class Produto implements Serializable {
 
     }
 
-    public Produto(String nome, String descricao, String id)
+    public Produto(String nome, String descricao, String id, Bitmap imagem, double preco)
     {
         this.nome = nome;
         this.descricao = descricao;
         this.id = id;
+        this.imagem = imagem;
+        this.preco = preco;
     }
 
-    public Produto(String nome, String descricao, String id, String tipoProduto, TamanhoProduto tamanhoProduto) {
+    public Produto(String nome, String descricao, String id, String tipoProduto) {
         this.nome = nome;
         this.descricao = descricao;
         this.id = id;
         this.tipoProduto = tipoProduto;
-        this.tamanhoProduto = tamanhoProduto;
     }
 
     public String getNome() {
@@ -86,12 +88,45 @@ public class Produto implements Serializable {
         this.tipoProduto = tipoProduto;
     }
 
-    public TamanhoProduto getTamanhoProduto() {
-        return tamanhoProduto;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setTamanhoProduto(TamanhoProduto tamanhoProduto) {
-        this.tamanhoProduto = tamanhoProduto;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+    @Exclude //Esta anotação faz com que o campo não seja gravado no
+    //banco de dados do firebase
+    public Bitmap getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Bitmap imagem) {
+        this.imagem = imagem;
+    }
+
+    public UnidadeMedida getUnidadeMedida() {
+        return unidadeMedida;
+    }
+
+    public void setUnidadeMedida(UnidadeMedida unidadeMedida) {
+        this.unidadeMedida = unidadeMedida;
+    }
 }
