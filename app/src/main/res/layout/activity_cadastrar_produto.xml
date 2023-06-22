@@ -109,8 +109,24 @@
             app:backgroundTint="#B0783B"
             app:layout_constraintBottom_toBottomOf="@+id/imvCadastrarProdutoFoto"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/imvCadastrarProdutoFoto" />
+            app:layout_constraintTop_toTopOf="@+id/imvCadastrarProdutoFoto"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/abreGaleria"
+            android:layout_width="161dp"
+            android:layout_height="55dp"
+            android:onClick="abreGaleria"
+            android:text="Definir Galeria"
+            app:backgroundTint="#B0783B"
+            app:layout_constraintBottom_toBottomOf="@+id/imvCadastrarProdutoFoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/imvCadastrarProdutoFoto"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView6"
