@@ -14,7 +14,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -39,9 +38,6 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 
 public class CadastrarProdutoActivity extends AppCompatActivity {
-    private static final int SELECAO_CAMERA = 100;
-    private static final int REQUEST_GALLERY = 2;
-
 
     private final String[] permissoes = new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -114,8 +110,8 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(CadastrarProdutoActivity.this,
-                        "Erro ao fazer upload da foto. Produto não cadastrado.",
-                        Toast.LENGTH_LONG).show();
+                    "Erro ao fazer upload da foto. Produto não cadastrado.",
+                    Toast.LENGTH_LONG).show();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -137,7 +133,6 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         });
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -150,30 +145,24 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     }
 
     ActivityResultLauncher<Intent> cameraResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Bitmap imagem = null;
+        new ActivityResultContracts.StartActivityForResult(),
+        new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Bitmap imagem = null;
 
-                        try {
-                            imagem = (Bitmap) result.getData().getExtras().get("data");
-//                    case SELECAO_GALERIA:
-//                        Uri uriImagemSelec = data.getData();
-//                        ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), uriImagemSelec);
-//                        imagem = ImageDecoder.decodeBitmap(source);
-//                        break;
-
-                            if (imagem != null) {
-                                fotoProduto.setImageBitmap(imagem);
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                    try {
+                        imagem = (Bitmap) result.getData().getExtras().get("data");
+                        if (imagem != null) {
+                            fotoProduto.setImageBitmap(imagem);
                         }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
-            });
+            }
+        });
 
     public void abreCamera(View view) {
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -183,36 +172,38 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     }
 
     ActivityResultLauncher<Intent> galeriaResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Bitmap imagem = null;
+        new ActivityResultContracts.StartActivityForResult(),
+        new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Bitmap imagem = null;
 
-                        try {
-                            Uri uriImagemSelec = (Uri) result.getData().getExtras().get("data");
-                            Bitmap bitmap = BitmapFactory.decodeFile(String.valueOf(uriImagemSelec));
-                            imagem = Bitmap.createScaledBitmap(bitmap, 1080, 1000, true);
-
-                            if (imagem != null) {
-                                fotoProduto.setImageBitmap(imagem);
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                    try {
+                        Uri uriImagemSelec = (Uri) result.getData().getData();
+                        ImageDecoder.Source source = null;
+                        //Este código funciona apenas da versão 9.0 do Android em diante
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                            source = ImageDecoder.createSource(getContentResolver(), uriImagemSelec);
+                            imagem = ImageDecoder.decodeBitmap(source);
                         }
+
+                        if (imagem != null) {
+                            fotoProduto.setImageBitmap(imagem);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
-            });
+            }
+        });
 
     public void abreGaleria(View view) {
-        Intent i = new Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         if (i.resolveActivity(getPackageManager()) != null) {
             galeriaResultLauncher.launch(i);
         }
     }
-
 
     private void alertaValidacaoPermissao(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
