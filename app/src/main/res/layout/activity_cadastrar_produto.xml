@@ -15,8 +15,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/nome"
@@ -38,11 +38,11 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Tipo:"
+            android:text="@string/tipo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoNome" />
 
@@ -58,11 +58,11 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Descrição:"
+            android:text="@string/descricao"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spnCadastrarProdutoTipo" />
 
@@ -82,11 +82,11 @@
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Foto:"
+            android:text="@string/foto"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoDescricao" />
 
@@ -130,20 +130,20 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="52dp"
-            android:text="Preço:"
+            android:text="@string/preco"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imvCadastrarProdutoFoto" />
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Unidade:"
+            android:text="@string/unidade"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/textView6" />
 
@@ -161,11 +161,11 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="68dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Estoque:"
+            android:text="@string/estoque"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -183,11 +183,11 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="76dp"
-            android:layout_height="23dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Quantidade:"
+            android:text="@string/quantidade"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCadastrarProdutoPreco" />
 
